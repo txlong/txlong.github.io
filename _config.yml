@@ -4,8 +4,8 @@ pygments:         true
 
 # Analytics
 analytics :
-  tracking_id :   'UA-6856454-4'
-  site_name:      'sergiou87.github.io'
+  tracking_id :   '暂无'
+  site_name:      'txlong.github.io'
 
 # Permalinks
 permalink:        pretty
@@ -13,18 +13,17 @@ permalink:        pretty
 # Setup
 excerpt_separator: <!--more-->
 
-title:            'Sergio Padrino'
-tagline:          'A blog about iOS development'
-description:      "In this blog I'll write about my work and thoughts as iOS developer."
-url:              http://sergiou87.github.io
+title:            '唐晓龙'
+tagline:          'Android开发相关博客'
+description:      "记录开发生活中的点点滴滴"
+url:              http://txlong.github.io
 
 author:
-  name:           'Sergio Padrino'
-  url:            https://twitter.com/sergiou87
+  name:           '唐晓龙'
+  url:            https://txlong-onz.iteye.com
 
 paginate:         5
 
 # Custom vars
-github:           https://github.com/sergiou87
-twitter:          https://twitter.com/sergiou87
-linkedin:         https://www.linkedin.com/profile/view?id=161276523
+github:			https://github.com/txlong
+weibo:   		http://weibo.com/u/2051318867
