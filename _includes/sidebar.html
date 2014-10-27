@@ -6,8 +6,8 @@
     </div>
 
     <ul class="sidebar-nav">
-      <li class="sidebar-nav-item{% if page.title == "Home" %} active{% endif %}">
-        <a href="/">Home</a>
+      <li class="sidebar-nav-item{% if page.title == "主页" %} active{% endif %}">
+        <a href="/">主页</a>
       </li>
 
       {% comment %}
@@ -27,8 +27,7 @@
       {% endfor %}
 
       <li class="sidebar-nav-item"><a href="{{ site.github }}">GitHub</a></li>
-      <li class="sidebar-nav-item"><a href="{{ site.twitter }}">Twitter</a></li>
-      <li class="sidebar-nav-item"><a href="{{ site.linkedin }}">LinkedIn</a></li>
+      <li class="sidebar-nav-item"><a href="{{ site.weibo }}">新浪微博</a></li>
     </ul>
 
     <p>&copy; {{ site.time | date: '%Y' }}. All rights reserved.</p>
