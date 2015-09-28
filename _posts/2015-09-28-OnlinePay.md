@@ -5,11 +5,11 @@ date:   2015-09-28 14:27:54
 categories: random
 ---
 
-# 支付宝移动支付
+## 支付宝移动支付
 
-SDK下载地址：https://b.alipay.com/order/productDetail.htm?productId=2014110308141993
+SDK下载地址：[LINK](https://b.alipay.com/order/productDetail.htm?productId=2014110308141993)
 
-## 下载相关文件
+### 下载相关文件
 
 ```
 WS_MOBILE_PAY_SDK_BASE.zip
@@ -18,7 +18,7 @@ WS_MOBILE_PAY_SDK_BASE.zip
 `--支付宝钱包支付接口开发包2.0标准版(20150917)
 ```
 
-## 具体步骤
+### 具体步骤
 
 1. 拷贝`alipaySDK-20150818.jar`到自己的libs目录
 1. res资源拷贝，`string.xml`因为就一个app_name的字符串，所以不用拷贝
@@ -27,9 +27,9 @@ WS_MOBILE_PAY_SDK_BASE.zip
 1. 混淆文件中的内容添加`proguard-project.txt`
 1. 自己定制其他内容
 
-# 微信支付
+## 微信支付
 
-资源中心：https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&lang=zh_CN
+资源中心：[LINK](https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&lang=zh_CN)
 
 ```
 新版本DEMO，使用AS编写，最后替换新版本的libammsdk.jar
@@ -53,7 +53,7 @@ app_wx_pay_tool_android1d902c.zip
 `--【微信支付】退款及对账开发指南.pdf
 ```
 
-## 具体步骤
+### 具体步骤
 
 拷贝java源代码到自己项目目录，假设自己程序的包名为`com.ianonymous.weixin`
 
