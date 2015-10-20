@@ -25,6 +25,7 @@ WS_MOBILE_PAY_SDK_BASE.zip
 1. java源码拷贝自己包名下
 1. AndroidManifest.xml添加需要的Activity，`H5PayActivity`
 1. 混淆文件中的内容添加`proguard-project.txt`
+1. 填上去支付的几个静态常量，`PARTNER、SELLER、RSA_PRIVATE、RSA_PUBLIC`
 1. 自己定制其他内容
 
 ## 微信支付
