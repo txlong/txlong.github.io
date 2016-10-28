@@ -27,7 +27,7 @@ p {
 	height: 100%;
 	position: relative;
 }
-#section0,  #section1,  #section2,  #section3 {
+#section0,  #section1,  #section2 {
 	background-color: #000;
 	background-size: cover;
 	background-position: 50% 50%;
@@ -43,20 +43,12 @@ p {
 	background: #fff;
 }
 #section2 {
-	background:#fff;
+	background: #135ca3;
 	color: #fff;
-	text-shadow:1px 1px 1px #666;
-}
-#section3 {
-	color: #008283;
-	background:#135ca3;
 	text-shadow:1px 1px 1px #fff;
 }
 #section0 p {
 	color: #F1FF00;
-}
-#section3 p {
-	color: #00A3AF;
 }
 .left {
 	float: left;
@@ -185,7 +177,7 @@ p {
 		$("#pages li").each(function(index){
 		  $(this).bind("click",function(){
 			  console.log(index)
-			  var traslate = -index*1920+"px";
+			  var traslate = -index*1080+"px";
 			  console.log(traslate);
 			  $("#container").css({
 				"transition":"all 1000 ease",
