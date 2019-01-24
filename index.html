@@ -1,193 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-	<meta charset="UTF-8">
-	<title>镜像美发</title>
-	<style type="text/css">
-h1, body, html {
-	padding: 0;
-	margin: 0;
-}
-body {
-	font-family: Arial, "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
-}
-html, body {
-	height: 100%;
-	overflow: hidden;
-}
-h1 {
-	font-size: 6em;
-	font-weight: normal;
-}
-p {
-	font-size: 2em;
-	margin:0.5em 0 2em 0;
-}
-#container, .section {
-	height: 100%;
-	position: relative;
-}
-#section0,  #section1,  #section2 {
-	background-color: #000;
-	background-size: cover;
-	background-position: 50% 50%;
-}
-#section0 {
-	background: #135ca3;
-	color: #fff;
-	text-shadow:1px 1px 1px #333;
-}
-#section1 {
-	color: #fff;
-	text-shadow:1px 1px 1px #333;
-	background: #fff;
-}
-#section2 {
-	background: #135ca3;
-	color: #fff;
-	text-shadow:1px 1px 1px #fff;
-}
-#section0 p {
-	color: #F1FF00;
-}
-.left {
-	float: left;
-}
-.intro {
-	position: absolute;
-	top: 50%;
-	width: 100%;
-	-webkit-transform: translateY(-50%);
-	transform: translateY(-50%);
-	text-align: center;
-}
-.arrow-down{
-	position:absolute;
-	display:inline-block;
-	width:50px;
-	height:50px;
-	background:url(images/arrow-down.png);
-	bottom:120px;
-	left:50%;
-	margin-left:-25px;
-	cursor:pointer;
-	}
-#pages{
-	position:absolute;
-	left:50%;
-	padding:0;
-	margin:0 0 0 -119px;
-	bottom:60px;
-	list-style: none;
-}
-#pages li{
-	width: 40px;
-	height: 8px;
-	float:left;
-	background:rgba(190,190,190,0.4);
-	margin:0 26px 0 0;
-	cursor:pointer;
-}
-#pages li.active{
-	width: 40px;
-	height: 8px;
-	border: none;
-	background: #1974cc;
-	margin-top: 0;
-}
-#section0 .title {
-	-webkit-transform: translateX(-100%);
-	transform: translateX(-100%);
-	-webkit-animation: sectitle0 1s ease-in-out 100ms forwards;
-	animation: sectitle0 1s ease-in-out 100ms forwards;
-}
-#section0 p {
-	-webkit-transform: translateX(100%);
-	transform: translateX(100%);
-	-webkit-animation: sec0 1s ease-in-out 100ms forwards;
-	animation: sec0 1s ease-in-out 100ms forwards;
-}
- @-webkit-keyframes sectitle0 {
- 0% {
- -webkit-transform: translateX(-100%);
- transform: translateX(-100%);
-}
- 100% {
- -webkit-transform: translateX(0);
- transform: translateX(0);
-}
-}
- @keyframes sectitle0 {
- 0% {
- -webkit-transform: translateX(-100%);
- transform: translateX(-100%);
-}
- 100% {
- -webkit-transform: translateX(0);
- transform: translateX(0);
-}
-}
- @-webkit-keyframes sec0 {
- 0% {
- -webkit-transform: translateX(100%);
- transform: translateX(100%);
-}
- 100% {
- -webkit-transform: translateX(0);
- transform: translateX(0);
-}
-}
- @keyframes sec0 {
- 0% {
- -webkit-transform: translateX(100%);
- transform: translateX(100%);
-}
- 100% {
- -webkit-transform: translateX(0);
- transform: translateX(0);
-}
-}
-</style>
-	</head>
-	<body>
-<div id="container">
-      <div class="section active" id="section0">
-        <div class="intro">
-          <img src="images/1-1.png" />
-        </div>
-      </div>
-      <div class="section" id="section1">
-        <div class="intro">
-          <img src="images/2-1.png" />
-        </div>
-      </div>
-     <div class="section" id="section2">
-       <div class="intro"> <img src="images/4-2.png" /> </div>
-     </div>
-    </div>
-<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
-<script type="text/javascript" src="js/pageswitch.js"></script>
-<script type="text/javascript">
-		$(function(){
-			$("#container").switchPage({
-				'loop' : true,
-				'keyboard' : true,
-				'direction' : 'horizontal'
-			});
-		$("#pages li").each(function(index){
-		  $(this).bind("click",function(){
-			  console.log(index)
-			  var traslate = -index*1080+"px";
-			  console.log(traslate);
-			  $("#container").css({
-				"transition":"all 1000 ease",
-				"transform":"translate3d("+traslate+", 0px, 0px)"
-			  });
-			  $(this).addClass("active").siblings().removeClass("active");
-			  $(".section").eq(index).addClass("active").siblings().removeClass("active");
-			  })
-		  })
-		});
-	</script>
-</body>
-</html>
+---
+layout: default
+title: 主页
+---
+
+<div class="posts">
+  {% for post in paginator.posts %}
+  <div class="post">
+    <h1 class="post-title">
+      <a href="{{ post.url }}">
+        {{ post.title }}
+      </a>
+    </h1>
+
+    <span class="post-date">{{ post.date | date_to_string }}</span>
+
+    {{ post.excerpt }}
+
+    {% if post.excerpt != post.content %}
+    <a href="{{ post.url }}">更多……</a><br><br>
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>
+
+<div class="pagination">
+  {% if paginator.next_page %}
+    <a class="pagination-item older" href="/page{{paginator.next_page}}">较旧的博文</a>
+  {% else %}
+    <span class="pagination-item older">较旧的博文</span>
+  {% endif %}
+  {% if paginator.previous_page %}
+    {% if paginator.page == 2 %}
+      <a class="pagination-item newer" href="/">新博文</a>
+    {% else %}
+      <a class="pagination-item newer" href="/page{{paginator.previous_page}}">新博文</a>
+    {% endif %}
+  {% else %}
+    <span class="pagination-item newer">新博文</span>
+  {% endif %}
+</div>
