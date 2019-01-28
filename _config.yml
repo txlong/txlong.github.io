@@ -13,13 +13,13 @@ permalink:        pretty
 # Setup
 excerpt_separator: <!--more-->
 
-title:            '唐晓龙'
+title:            '小龙'
 tagline:          'Android开发相关博客'
 description:      "记录开发生活中的点点滴滴"
 url:              http://txlong.github.io
 
 author:
-  name:           '唐晓龙'
+  name:           '小龙'
   url:            https://txlong-onz.iteye.com
 
 paginate:         5
